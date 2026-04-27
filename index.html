@@ -3,512 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">    
-    <style>
-        /* ...existing code... */
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: #fff; /* Ensure the white background */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            height: 500px; /* Set a consistent height for all project cards */
-        }
-
-        .project-image img {
-            width: 100%;
-            height: auto; /* Maintain the image's aspect ratio */
-            object-fit: cover; /* Ensure the image covers its container */
-        }
-
-        .project-content {
-            padding: 20px;
-            flex-grow: 1; /* Allow the content to expand */
-        }
-
-        /* Media query per dispositivi mobili */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-                position: relative;
-                margin-bottom: 20px; /* Aggiungi spazio sotto l'header */
-            }
-
-            .nav-links {
-                display: none; /* Nascondi il menu */
-                flex-direction: column;
-                gap: 10px;
-                background-color: #fff;
-                position: absolute;
-                top: 100%;
-                left: 10px;
-                right: 10px;
-                padding: 10px;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-                text-align: center;
-                justify-content: center;
-                transition: all 0.3s ease-in-out;
-            }
-
-            .nav-links.active {
-                display: flex; /* Mostra il menu quando attivo */
-            }
-
-            .nav-links li {
-                margin: 0;
-                padding: 0;
-            }
-
-            .nav-links li a {
-                text-decoration: none;
-                color: #333;
-                font-weight: bold;
-                padding: 8px 0;
-                display: block;
-                border-radius: 8px;
-                transition: background-color 0.3s ease, color 0.3s ease;
-            }
-
-            .nav-links li a:hover {
-                background-color: #f0f0f0;
-                color: #525eff;
-            }
-
-            .hamburger {
-                display: block;
-                cursor: pointer;
-                font-size: 24px;
-                background: none;
-                border: none;
-                outline: none;
-                margin-bottom: 10px;
-                transition: background-color 0.3s ease, color 0.3s ease;
-            }
-
-            .hamburger.active {
-                background-color: #525eff; /* Colore primario */
-                color: #fff; /* Colore del testo */
-                border-radius: 50%; /* Sfondo rotondo */
-                padding: 10px; /* Spazio interno */
-            }
-
-            .hero-cta {
-                display: none; /* Nascondi il tasto "Contattami" in modalità mobile */
-            }
-        }
-
-        @media (min-width: 761px) {
-            .hamburger {
-                display: none; /* Nascondi completamente il tasto hamburger */
-            }
-        }
-    </style>
+    <title>Samuele Macrì — Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
-    <!-- Header -->
+    <button class="theme-toggle" aria-label="Cambia tema">🌙</button>
+
+    <button class="back-to-top" aria-label="Torna su">↑</button>
+
     <header>
         <div class="container">
             <div class="navbar">
-                <a href="#" class="logo">My Portfolio</a>
-                <button class="hamburger" aria-label="Toggle menu">☰</button>
+                <a href="index.html" class="logo">Portfolio FSL</a>
+                <button class="hamburger" aria-label="Apri menu">
+                    <span></span><span></span><span></span>
+                </button>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Chi Sono</a></li>
-                    <li><a href="#skills">Competenze</a></li>
-                    <li><a href="#projects">Progetti Svolti</a></li>
-                    <li><a href="#contact">Contatti</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="skills.html">Competenze</a></li>
+                    <li><a href="projects.html">Progetti</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="about.html">Chi Sono</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- HERO ANIMATO — centrato, senza foto -->
+    <section class="home-hero">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-dots"></div>
+
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h3 class="hero-tagline">Studente dell'I.I.S. Blaise Pascal</h3>
-                    <h1 class="hero-name">Samuele Macrì</h1>
-                    <p class="hero-description">Benvenuto nel mio portfolio digitale. Sono uno studente appassionato di informatica. Attraverso questo portfolio potrai conoscere il mio percorso formativo, le mie competenze e i progetti PCTO che ho svolto.</p>
-                    <a href="#contact" class="hero-cta">Contattami</a>
+            <div class="home-hero-inner">
+                <div class="home-hero-badge">Portfolio - Percorso FSL</div>
+                <h1 class="home-hero-name">
+                    Ciao, sono<br>
+                    <span class="gradient-text">Samuele Macrì</span>
+                </h1>
+                <p class="home-hero-desc">Studente appassionato di informatica. Questo portfolio raccoglie il mio percorso formativo, le mie competenze e i progetti FSL che ho realizzato.</p>
+                <div class="home-hero-buttons">
+                    <a href="projects.html" class="btn-primary">Vedi i Progetti →</a>
+                    <a href="about.html" class="btn-outline">Chi Sono</a>
                 </div>
-                <div class="hero-image">
-                    <img src="img/me.jpg" alt="Il mio profilo" class="profile-image">
+                <div class="home-stats">
+                    <div class="home-stat-item">
+                        <div class="home-stat-number">6</div>
+                        <div class="home-stat-label">Progetti FSL</div>
+                    </div>
+                    <div class="home-stat-item">
+                        <div class="home-stat-number">2</div>
+                        <div class="home-stat-label">Lingue Parlate</div>
+                    </div>
+                    <div class="home-stat-item">
+                        <div class="home-stat-number">∞</div>
+                        <div class="home-stat-label">Voglia di Imparare</div>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- onda -->
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#f5f7ff"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- PREVIEW PROGETTI -->
+    <section class="home-projects">
+        <div class="container">
+            <h2 class="section-title">Progetti FSL</h2>
+            <div class="home-projects-grid">
+
+                <a href="ust.html" class="sr home-project-card">
+                    <div class="home-project-img">
+                        <img src="img/ust1.jpg" alt="Progetto UST">
+                        <div class="home-project-tag">Formazione</div>
+                    </div>
+                    <div class="home-project-body">
+                        <div class="home-project-date">Terzo Anno</div>
+                        <h3 class="home-project-title">Progetto UST</h3>
+                        <p class="home-project-desc">Lezione introduttiva sul percorso FSL promosso dal Ministero, con panoramica sulle opportunità formative.</p>
+                        <span class="home-project-link">Scopri di più →</span>
+                    </div>
+                </a>
+
+                <a href="montasmonta.html" class="sr home-project-card">
+                    <div class="home-project-img">
+                        <img src="img/ms1.jpg" alt="Monta&Smonta">
+                        <div class="home-project-tag">Assemblaggio</div>
+                    </div>
+                    <div class="home-project-body">
+                        <div class="home-project-date">Terzo Anno</div>
+                        <h3 class="home-project-title">Monta&amp;Smonta</h3>
+                        <p class="home-project-desc">Smontaggio e rimontaggio di un PC per esplorare i componenti interni e comprendere il funzionamento dell'hardware.</p>
+                        <span class="home-project-link">Scopri di più →</span>
+                    </div>
+                </a>
+
+                <a href="busconnect.html" class="sr home-project-card">
+                    <div class="home-project-img">
+                        <img src="img/bc1.jpg" alt="BUSCONNECT">
+                        <div class="home-project-tag">Comunicazione</div>
+                    </div>
+                    <div class="home-project-body">
+                        <div class="home-project-date">Terzo Anno</div>
+                        <h3 class="home-project-title">BUSCONNECT</h3>
+                        <p class="home-project-desc">Insegnamento di competenze digitali agli anziani dell'associazione AUSER: inclusione digitale intergenerazionale.</p>
+                        <span class="home-project-link">Scopri di più →</span>
+                    </div>
+                </a>
+
+            </div>
+            <div class="home-projects-cta">
+                <a href="projects.html" class="btn-primary">Tutti i Progetti →</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">Chi Sono</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="img/logo.jpeg" alt="Io a scuola">
-                </div>
-                <div class="about-text">
-                    <h3 class="about-subtitle">Un po' di me</h3>
-                    <h2 class="about-title">La mia formazione e passioni</h2>
-                    <p class="about-description">Sono uno studente dell'indirizzo Informatica dell'I.I.S. Blaise Pascal. Il mio percorso formativo mi ha permesso di sviluppare competenze in vari ambiti, con particolare interesse nelle materie materie del futuro.</p>
-                    <p class="about-description">Mi contraddistingue la curiosità e la voglia di imparare continuamente cose nuove. Nel tempo libero mi dedico all'allenamento e ad attività socialmente utili, soprattutto nel periodo estivo, che mi permettono di ampliare le mie competenze anche al di fuori dell'ambito scolastico.</p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <h3 class="highlight-number">3</h3>
-                            <p class="highlight-text">Progetti PCTO</p>
-                        </div>
-                        <div class="highlight-item">
-                            <h3 class="highlight-number">2</h3>
-                            <p class="highlight-text">Lingue Parlate</p>
-                        </div>
-                        <div class="highlight-item">
-                            <h3 class="highlight-number">Work in Progress</h3>
-                            <p class="highlight-text">Competenze Tecniche</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section skills">
+    <!-- SKILL PREVIEW -->
+    <section class="home-skills-preview">
         <div class="container">
             <h2 class="section-title">Le Mie Competenze</h2>
-            <div class="skills-content">
-                <div class="skills-tabs">
-                    <div class="skills-tab active">Linguistiche</div>
-                    <div class="skills-tab">Digitali</div>
-                    <div class="skills-tab">Tecniche</div>
-                    <div class="skills-tab">Trasversali</div>
-                </div>
-                <div class="skills-tab-content">
-                    <h2 class="skills-title">Competenze Linguistiche</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <div class="skill-name">
-                                <span>Italiano</span>
-                                <span class="skill-level">Livello:</span>
-                            </div>
-                            <p class="skill-status">Work in Progress</p>
-                        </div>
-                        <div class="skill-card">
-                            <div class="skill-name">
-                                <span>Inglese</span>
-                                <span class="skill-level">Livello:</span>
-                            </div>
-                            <p class="skill-status">Work in Progress</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills-tab-content" style="display: none;">
-                    <h2 class="skills-title">Competenze Digitali</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <div class="skill-name">
-                                <span>HTML/CSS</span>
-                                <span class="skill-level">Livello:</span>
-                            </div>
-                            <p class="skill-status">Work in Progress</p>
-                        </div>
-                        <div class="skill-card">
-                            <div class="skill-name">
-                                <span>C++</span>
-                                <span class="skill-level">Livello:</span>
-                            </div>
-                            <p class="skill-status">Work in Progress</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills-tab-content" style="display: none;">
-                    <h2 class="skills-title">Competenze Tecniche</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <div class="skill-name">
-                                <span>Programmazione</span>
-                                <span class="skill-level">Livello:</span>
-                            </div>
-                            <p class="skill-status">Work in Progress</p>
-                        </div>
-                        <div class="skill-card">
-                            <div class="skill-name">
-                                <span>Database</span>
-                                <span class="skill-level">Livello:</span>
-                            </div>
-                            <p class="skill-status">Work in Progress</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="skills-tab-content" style="display: none;">
-                    <h2 class="skills-title">Competenze Trasversali</h2>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <div class="skill-name">
-                                <span>Team Working</span>
-                                <span class="skill-level">Livello:</span>
-                            </div>
-                            <p class="skill-status">Work in Progress</p>
-                        </div>
-                        <div class="skill-card">
-                            <div class="skill-name">
-                                <span>Problem Solving</span>
-                                <span class="skill-level">Livello:</span>
-                            </div>
-                            <p class="skill-status">Work in Progress</p>
-                        </div>
-                    </div>
-                </div>
+            <p class="home-skills-desc">Sto sviluppando competenze in diversi ambiti, dalla programmazione alle lingue straniere, fino alle soft skills che uso ogni giorno.</p>
+            <div class="home-skills-chips">
+                <div class="skill-chip">Italiano</div>
+                <div class="skill-chip">Inglese</div>
+                <div class="skill-chip">HTML / CSS</div>
+                <div class="skill-chip">C++</div>
+                <div class="skill-chip">Programmazione</div>
+                <div class="skill-chip">Database</div>
+                <div class="skill-chip">Team Working</div>
+                <div class="skill-chip">Problem Solving</div>
+            </div>
+            <div style="text-align:center;">
+                <a href="skills.html" class="btn-primary">Vedi tutte le competenze →</a>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects">
-        <div class="container">
-            <h2 class="section-title">Progetti PCTO</h2>
-            <div class="projects-content">
-                <div class="year-tabs">
-                    <div class="year-tab active">Terzo Anno</div>
-                    <div class="year-tab">Quarto Anno</div>
-                    <div class="year-tab">Quinto Anno</div>
-                </div>
-
-                <!-- Terzo Anno Projects -->
-                <div class="projects-grid">
-                    <!-- Progetto 1 -->
-                    <a href="ust.html">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="img/ust1.jpg" alt="Progetto 1">
-                                <div class="project-category">Formazione</div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Progetto UST</h3>
-                                <div class="project-period">30 Ottobre 2024</div>
-                                <p class="project-description">Una lezione introduttiva sui contenuti del percorso PCTO promosso dal Ministero, rivolta a tutti gli indirizzi scolastici. L'incontro, tenuto dal prof. Vairo, ha offerto una panoramica sulle opportunità formative e sulle attività previste.</p>
-                                <div class="project-skills">
-                                    <span class="project-skill">Le basi dei PCTO</span>
-                                    <span class="project-skill">Conoscenze</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Progetto 2 -->
-                    <a href="montasmonta.html">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="img/ms1.jpg" alt="Progetto 2">
-                                <div class="project-category">Praticità</div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Progetto Monta&Smonta</h3>
-                                <div class="project-period">10 Gennaio 2025</div>
-                                <p class="project-description">Un progetto educativo pratico che permette di esplorare i componenti interni del PC attraverso lo smontaggio e il rimontaggio. Favorisce l'apprendimento attivo e la comprensione diretta della tecnologia, rendendo l'esperienza coinvolgente e istruttiva.</p>
-                                <div class="project-skills">
-                                    <span class="project-skill">Un po' di Hardware</span>
-                                    <span class="project-skill">Manualità</span>
-                                    <span class="project-skill">Precisione</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Progetto 3 -->
-                    <a href="busconnect.html">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="img/bc1.jpg" alt="Progetto 3">
-                                <div class="project-category">Comunicazione</div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Progetto BUSCONNECT</h3>
-                                <div class="project-period">Febbraio - Marzo 2025</div>
-                                <p class="project-description">Un progetto in cui studenti di terza media aiutano gli anziani dell'associazione AUSER a migliorare le loro competenze informatiche. Attraverso incontri pratici, favoriscono l'inclusione digitale e lo scambio intergenerazionale. Un'esperienza che rafforza i legami e promuove la conoscenza tecnologica.</p>
-                                <div class="project-skills">
-                                    <span class="project-skill">Generazioni che si incontrano</span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Quarto Anno Projects -->
-                <div class="projects-grid" style="display: none;">
-                                        <div class="empty-projects">
-                        <h3 class="empty-title">Progetti in arrivo!</h3>
-                        <p class="empty-description">I progetti PCTO del quarto anno saranno aggiunti non appena disponibili. Rimanete sintonizzati per scoprire le mie future esperienze professionali e i progetti che realizzerò.</p>
-                    </div>
-                </div>
-                
-                <!-- Quinto Anno Projects -->
-                <div class="projects-grid" style="display: none;">
-                    <!-- Progetti del Quinto Anno -->
-                    <div class="empty-projects">
-                        <h3 class="empty-title">Progetti in arrivo!</h3>
-                        <p class="empty-description">I progetti PCTO del quinto anno saranno aggiunti non appena disponibili. Rimanete sintonizzati per scoprire le mie future esperienze professionali e i progetti che realizzerò.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">Contattami</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3 class="contact-title">Informazioni di Contatto</h3>
-                    <ul class="contact-list">
-                        <li class="contact-item">
-                            <div class="contact-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Telefono</h4>
-                                <p>+39 XXX XXX XXX</p>
-                            </div>
-                        </li>
-                        <li class="contact-item">
-                            <div class="contact-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>samuele.macri@studenti.iispascal.it</p>
-                            </div>
-                        </li>
-                        <li class="contact-item">
-                            <div class="contact-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Indirizzo</h4>
-                            <p>Via XXXXXX, XXXX</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-logo">Portfolio</div>
-            <p class="footer-text">Grazie per aver visitato il mio portfolio. Spero di averti dato una buona panoramica delle mie competenze e dei progetti su cui ho lavorato durante il mio percorso scolastico.</p>
-            <p class="footer-copyright">© 2025 Samuele Macrì. </p>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="footer-logo">SM.</div>
+                    <p>Portfolio di Samuele Macrì, studente dell'indirizzo Informatica dell'I.I.S. Blaise Pascal. Raccoglie il mio percorso formativo, le competenze acquisite e i progetti FSL realizzati.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigazione</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="skills.html">Competenze</a></li>
+                        <li><a href="projects.html">Progetti</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                        <li><a href="about.html">Chi Sono</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Progetti</h4>
+                    <ul>
+                        <li><a href="ust.html">Progetto UST</a></li>
+                        <li><a href="montasmonta.html">Monta&amp;Smonta</a></li>
+                        <li><a href="busconnect.html">BUSCONNECT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Samuele Macrì — I.I.S. Blaise Pascal</span>
+                <span>Portfolio scolastico</span>
+            </div>
         </div>
     </footer>
-    <!-- Footer -->
-    <!-- JavaScript -->
-    <script>
-        // Gestione delle schede per le competenze
-        const skillsTabs = document.querySelectorAll('.skills-tab');
-        const skillsContents = document.querySelectorAll('.skills-tab-content');
 
-        skillsTabs.forEach((tab, index) => {
-            tab.addEventListener('click', function () {
-                // Rimuove la classe active da tutte le schede
-                skillsTabs.forEach(t => t.classList.remove('active'));
-                skillsContents.forEach(content => content.style.display = 'none');
-
-                // Aggiunge la classe active alla scheda cliccata
-                this.classList.add('active');
-                skillsContents[index].style.display = 'block'; // Mostra il contenuto corrispondente
-            });
-        });
-
-        // Gestione delle schede per i progetti
-        const yearTabs = document.querySelectorAll('.year-tab');
-        const projectsGrids = document.querySelectorAll('.projects-grid');
-
-        yearTabs.forEach((tab, index) => {
-            tab.addEventListener('click', function () {
-                // Rimuove la classe active da tutte le schede
-                yearTabs.forEach(t => t.classList.remove('active'));
-                projectsGrids.forEach(grid => grid.style.display = 'none');
-
-                // Aggiunge la classe active alla scheda cliccata
-                this.classList.add('active');
-                projectsGrids[index].style.display = 'grid'; // Mostra il contenuto corrispondente
-            });
-        });
-
-        // Assicurati che la prima scheda sia visibile all'avvio
-        document.querySelector('.year-tab.active').click();
-
-        // Smooth scroll per i link di navigazione
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            preloader.classList.add('fade-out');
-            setTimeout(function() {
-                preloader.style.display = 'none';
-            }, 500);
-        });
-
-        // Menu a tendina per dispositivi mobili
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active'); // Aggiungi/rimuovi la classe active al pulsante
-        });
-
-        // Header sticky
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 100);
-        });
-
-        // Rimuovi il tasto hamburger dal DOM quando lo schermo è più grande di 760px
-        window.addEventListener('resize', function () {
-            const hamburger = document.querySelector('.hamburger');
-            if (window.innerWidth > 760 && hamburger) {
-                hamburger.style.display = 'none'; // Nascondi il tasto hamburger
-            } else if (window.innerWidth <= 760 && hamburger) {
-                hamburger.style.display = 'block'; // Mostra il tasto hamburger
-            }
-        });
-
-        // Esegui il controllo iniziale
-        document.addEventListener('DOMContentLoaded', function () {
-            const hamburger = document.querySelector('.hamburger');
-            if (window.innerWidth > 760 && hamburger) {
-                hamburger.style.display = 'none';
-            }
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
